@@ -1,0 +1,129 @@
+@use "../abstracts/" as a;
+
+.citizens {
+  &__careers {
+    padding-block: 48px;
+    &__header {
+      color: a.$green;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 28px;
+
+      &::after {
+        content: "";
+        width: 72px;
+        height: 2px;
+        background-color: a.$green;
+        display: block;
+        margin-inline: auto;
+        margin-top: 20px;
+      }
+    }
+
+    &__content {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__advantage {
+    @include a.breakpoint-max(medium) {
+      padding-bottom: 40px;
+    }
+
+    &__header {
+      color: a.$green;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 28px;
+
+      &::after {
+        content: "";
+        width: 72px;
+        height: 2px;
+        background-color: a.$green;
+        display: block;
+        margin-inline: auto;
+        margin-top: 20px;
+      }
+    }
+    &__wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 52px;
+
+      @include a.breakpoint-min(medium) {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 80px;
+        row-gap: 100px;
+      }
+
+      &__item {
+        position: relative;
+
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+          &::after {
+            content: "";
+            width: 100%;
+            height: 0.4px;
+            background-color: a.$gray;
+            display: block;
+            position: absolute;
+            bottom: -26px;
+          }
+        }
+
+        &:nth-of-type(2) {
+          &::after {
+            @include a.breakpoint-max(medium) {
+              content: "";
+              width: 100%;
+              height: 0.4px;
+              background-color: a.$gray;
+              display: block;
+              position: absolute;
+              bottom: -26px;
+            }
+          }
+        }
+
+        &:nth-of-type(odd) {
+          &::after {
+            @include a.breakpoint-min(medium) {
+              content: "";
+              width: 0.4px;
+              height: 70%;
+              background-color: a.$gray;
+              position: absolute;
+              top: 40%;
+              transform: translateY(-50%);
+              right: -40px;
+            }
+          }
+        }
+
+        &__title {
+          font-size: 20px;
+          line-height: 1.3;
+          color: a.$green;
+        }
+
+        &__content {
+          margin-bottom: 0;
+        }
+
+        &__link {
+          display: block;
+          margin-top: 16px;
+          color: #759b24;
+
+          &::after {
+            content: "\3009";
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}

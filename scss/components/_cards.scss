@@ -1,0 +1,35 @@
+@use "../abstracts/" as a;
+
+// loan officer card component
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image {
+    margin-block: 16px;
+  }
+
+  &__quote {
+    position: relative;
+    font-style: italic;
+    text-align: center;
+
+    &::before {
+      content: url(../assets/quote.png);
+      position: absolute;
+      left: -8px;
+    }
+  }
+
+  &__name {
+    color: rgba(0, 148, 95, 0.839);
+    text-align: center;
+
+    &--mark {
+      @include a.breakpoint-min(large) {
+        width: 200px;
+      }
+    }
+  }
+}

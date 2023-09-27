@@ -1,0 +1,9 @@
+@use "../abstracts/" as a;
+
+.main {
+  padding-inline: 20px;
+
+  @include a.breakpoint-min(medium) {
+    padding-inline: 36px;
+  }
+}

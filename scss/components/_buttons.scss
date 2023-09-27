@@ -1,0 +1,13 @@
+@use "../abstracts/" as a;
+
+// button style
+
+.button {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 12px 20px;
+  font-size: 20px;
+  color: #fff;
+  background-color: a.$orange;
+}

@@ -1,0 +1,46 @@
+@use "../abstracts/" as a;
+
+.footer {
+  padding: 26px 20px 36px 20px;
+  border-top: 1px solid a.$green;
+
+  @include a.breakpoint-min(medium) {
+    padding: 36px 36px 40px 36px;
+  }
+
+  &__socials {
+    &__icon {
+      width: 32px;
+      height: auto;
+      margin-left: -6px;
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    margin-top: 24px;
+
+    &__text {
+      font-size: 11px;
+      line-height: 1.2;
+
+      &__link {
+        text-decoration: underline;
+        color: a.$gray;
+      }
+    }
+  }
+
+  &__links {
+    margin-top: 16px;
+
+    &__link {
+      font-size: 12px;
+      color: rgb(0, 0, 0);
+    }
+
+    &__divider {
+      margin-inline: 8px;
+    }
+  }
+}
